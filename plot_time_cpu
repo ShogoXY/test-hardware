@@ -1,0 +1,14 @@
+set terminal pngcairo size 1200,600 enhanced font 'Verdana'
+set output sprintf('test.png', filename)
+set timefmt '%H:%M:%S'
+set xdata time
+set format x '%H:%M:%S'
+set grid ytics lc rgb "#bbbbbb" lw 2 lt 1
+set title "Temperature CPU"
+set xlabel "Time (Hour:Minute:Second) "
+set ylabel "Celcius"
+
+plot "plot.txt" using 2:1 with lines title "CPU0" linewidth 2 lc rgb '#FF4041'
+     
+     
+replot
